@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/ui/LoseScreen.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/gfx/backgrounds/backdrops/bg-layer-1.png" type="Texture" id=4]
+[ext_resource path="res://assets/gfx/hud/life.png" type="Texture" id=5]
+
+[node name="LoseScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 24
+custom_constants/margin_top = 24
+custom_constants/margin_left = 24
+custom_constants/margin_bottom = 24
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center" type="CenterContainer" parent="Margin"]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 1000.0
+margin_bottom = 576.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Margin/Center"]
+margin_left = 150.0
+margin_top = 151.0
+margin_right = 825.0
+margin_bottom = 401.0
+
+[node name="Title" type="Label" parent="Margin/Center/VBox"]
+margin_right = 675.0
+margin_bottom = 164.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "You lose :("
+
+[node name="HBox" type="HBoxContainer" parent="Margin/Center/VBox"]
+margin_top = 168.0
+margin_right = 675.0
+margin_bottom = 250.0
+custom_constants/separation = 16
+alignment = 1
+
+[node name="RestartButton" type="TextureButton" parent="Margin/Center/VBox/HBox"]
+margin_left = 133.0
+margin_right = 185.0
+margin_bottom = 82.0
+texture_normal = ExtResource( 5 )
+
+[node name="RestartLabel" type="Label" parent="Margin/Center/VBox/HBox"]
+margin_left = 201.0
+margin_right = 541.0
+margin_bottom = 82.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Try Again"
+[connection signal="pressed" from="Margin/Center/VBox/HBox/RestartButton" to="." method="_on_RestartButton_pressed"]
