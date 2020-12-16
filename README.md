@@ -14,16 +14,16 @@
 ## Feature Requests
 - Add real levels
 
-## Review
-- [ ] Refactor: Create dynamic scene changes for Play Again button
-- [ ] Refactor: Remove camera from Player scene into Level scene
-
 ## Bugs
 - [ ] Fix continuous hop
 - [ ] Fix air walk while jumping left and touching ceiling
 - [ ] Fix no jump bug while walking near ledge
 - [ ] Fix accidental double jump while jumping up to a ledge
 - [ ] Fix PainSFX audio cutoff when changing to LoseScreen
+
+## Review / Refactor
+- [ ] Create dynamic scene changes for Play Again button
+- [ ] Remove camera from Player scene into Level scene
 
 ## Contributors
 - Course by [GameDev.tv](https://www.gamedev.tv) and [Yann Burrett](https://www.canopy.games)
